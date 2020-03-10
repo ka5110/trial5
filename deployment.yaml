@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo2
+  name: demo2
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: demo2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo2
+    spec:
+      containers:
+      - image: omegacontainerregister.azurecr.io/sprintone:latest
+        name: test1
+        resources: {}
+status: {}
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo2
+  name: demo2
+spec:
+  ports:
+  - name: 5000-5000
+    port: 5001
+    port: 5002
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: demo2
+  type: ClusterIP
+status:
+  loadBalancer: {}
