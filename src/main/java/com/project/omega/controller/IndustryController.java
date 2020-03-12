@@ -64,7 +64,7 @@ public class IndustryController {
         if (industry) {
             return new ResponseEntity(HttpStatus.OK);
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("ID of Industry tot be updated not found in DB");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("ID of Industry tfot be updated not found in DB");
     }
 
 }
