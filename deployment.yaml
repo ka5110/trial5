@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: demo2
-  name: demo2
+    app: demo4
+  name: demo4
 spec:
-  replicas: 5
+  replicas: 4
   selector:
     matchLabels:
-      app: demo2
+      app: demo4
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: demo2
+        app: demo4
     spec:
       containers:
-      - image: omegacontainerregister.azurecr.io/sprintone:latest
-        name: test1
+      - image: omegacontainerregister.azurecr.io/trial5:test1
+        name: test5
         resources: {}
 status: {}
 --- 
@@ -28,8 +28,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: demo2
-  name: demo2
+    app: demo4
+  name: demo4
 spec:
   ports:
   - name: 5000-5000
@@ -37,8 +37,9 @@ spec:
     port: 5002
     protocol: TCP
     targetPort: 5000
+    targetPort: 5001
   selector:
-    app: demo2
+    app: demo4
   type: ClusterIP
 status:
   loadBalancer: {}

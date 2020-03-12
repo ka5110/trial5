@@ -143,7 +143,7 @@
                         </ports>
                     </container>
                     <to>
-                        <image>omegacontainerregister.azurecr.io/sprintone</image>
+                        <image>omegacontainerregister.azurecr.io/trial5:test12</image>
                     </to>
                 </configuration>
             </plugin>
